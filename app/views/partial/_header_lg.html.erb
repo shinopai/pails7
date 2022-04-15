@@ -1,0 +1,33 @@
+<div class="hidden lg:block w-1/4 h-auto">
+    <div id="header-inner" class="w-3/5">
+        <div class="max-w-[140px] w-full">
+      <h1><%= link_to image_tag('digital.svg', class: 'object-cover w-full h-auto'), root_path %></h1>
+      </div>
+
+    <ul id="header-menu" class="mt-[64px] text-default-menu font-bold">
+      <li class="mb-[16px]"><%= link_to 'ホーム', root_path %></li>
+      <li class="mb-[16px]"><%= link_to '活動・施策を知る', policies_path %></li>
+      <li class="mb-[16px]"><%= link_to '声を届ける', get_involved_path %></li>
+      <li><%= link_to 'タイムライン', timelines_path %></li>
+    </ul>
+    </div>
+</div>
+
+<!-- for script -->
+<div id="url" class="hidden">
+<%= request.url %>
+</div>
+
+<script>
+  let url = document.getElementById('url');
+  let res = url.textContent;
+  let ul = document.getElementById('header-menu');
+
+  if(res.includes('policies')){
+    ul.children[1].classList.add('base-blue');
+  }else if(res.includes('get-involved')){
+    ul.children[2].classList.add('base-blue');
+  }else{
+    ul.firstElementChild.classList.add('base-blue');
+  }
+</script>

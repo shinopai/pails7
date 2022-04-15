@@ -91,18 +91,7 @@
 
  <div class="flex flex-wrap justify-between items-start pt-[64px]">
  <!-- header -->
-	<div class="hidden lg:block w-1/4 h-auto">
-    <div id="header-inner" class="w-3/5">
-      <h1><%= link_to image_tag('digital.svg', class: 'object-cover w-full h-auto'), root_path %></h1>
-
-    <ul class="mt-[64px] text-default-menu font-bold">
-      <li class="mb-[16px]"><%= link_to 'ホーム', root_path %></li>
-      <li class="mb-[16px]"><%= link_to '活動・施策を知る', policies_path %></li>
-      <li class="mb-[16px] base-blue"><%= link_to '声を届ける', get_involved_path %></li>
-      <li><%= link_to 'タイムライン', timelines_path %></li>
-    </ul>
-    </div>
-  </div>
+		<%= render 'partial/header_lg' %>
 
   <!-- main -->
 	<div class="w-full lg:w-2/4 h-auto mb-[104px]">
@@ -187,58 +176,9 @@
 </div>
 
 <!-- footer -->
-<div class="bg-[#EFEFEF]">
-  <div class="w-[90%] mx-auto">
- <div class="lg:flex lg:flex-wrap lg:justify-between lg:items-start pt-[64px]">
- <!-- left side -->
-	<div class="w-1/3 lg:w-1/4 h-auto">
-    <div id="header-inner" class="w-3/5">
-      <h1><%= link_to image_tag('digital.svg', class: 'object-cover w-full h-auto'), root_path %></h1>
-
-    <ul class="mt-[40px] lg:mt-[64px] text-default-menu font-bold">
-      <li class="mb-[16px]"><%= link_to 'ホーム', root_path %></li>
-      <li class="mb-[16px]"><%= link_to '活動・施策を知る', policies_path %></li>
-      <li class="mb-[16px] base-blue"><%= link_to '声を届ける', get_involved_path %></li>
-      <li><%= link_to 'タイムライン', timelines_path %></li>
-    </ul>
-    </div>
-  </div>
-
-  <!-- center -->
-	<div class="mt-[40px] lg:mt-0 w-full lg:w-2/4 h-auto">
-    <div class="lg:w-4/5 lg:mx-auto">
-      <h2 class="text-default-menu sub-heading mb-[16px]">新しいトピック</h2>
-      <% @latest_topics.each do |topic| %>
-      <div class="flex justify-center border rounded-lg mb-[24px]">
-        <div class="block p-6 bg-[#FCFCFC] w-full">
-          <h3 class="heading leading-tight mb-[16px]"><%= topic.title %></h3>
-          <span class="sm-text sub-heading"><%= l topic.created_at %></span>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-
-  <!-- right side -->
-	<div class="mt-[48px] lg:mt-0 lg:w-1/4 h-auto pb-[64px] lg:pb-0">
-  <div class="mb-[40px]">
-    <h2 class="text-default-menu sub-heading mb-[16px]">デジタル庁へのアクセス</h2>
-    <address class="text-default-menu not-italic">〒102-0094　東京都千代田区紀尾井町1-3　東京ガーデンテラス紀尾井町 19階、20階</address>
-  </div>
-  <ul class="flex justify-start items-center gap-10">
-    <li><%= link_to image_tag('facebook.png'), '#' %></li>
-    <li><%= link_to image_tag('twitter.png'), '#' %></li>
-  </ul>
-  </div>
-</div>
-</div>
-</div>
+<%= render 'partial/footer' %>
 
 <!-- back to top button -->
-<div id="back-button" class="fixed bottom-10 right-10 cursor-pointer">
-<div class="w-[56px] h-[56px] border border-[#0f41af] rounded-full relative">
-  <%= image_tag 'up-arrow.png', class: 'absolute top-[50%] left-0 right-0 mx-auto -translate-y-[50%]' %>
-</div>
-</div>
+<%= render 'partial/back_to_button' %>
 </body>
 </html>
