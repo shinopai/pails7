@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="デジタル庁は、デジタル社会形成の司令塔として、未来志向のDXを大胆に推進し、デジタル時代の官民のインフラを今後5年で一気呵成に作り上げることを目指します。"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイムライン | デジタル庁</title>
+</head>
+<body>
+  <div class="w-[90%] max-w-[1200px] lg:pt-[64px] mb-[104px] mx-auto">
+  <!-- header for sm -->
+  <header class="lg:hidden">
+  <div class="w-full flex justify-between items-center py-[16px]">
+  <div class="w-1/6 shrink-0">
+    <%= link_to image_tag('digital.svg'), root_path, class: ' object-cover w-full h-auto' %>
+  </div>
+  <div id="sm-menu-button" class="shrink-0">
+    <%= image_tag 'hamburger.png', id: 'open-button' %>
+    <%= image_tag 'cancel.png', id: 'close-button', class: 'hidden'  %>
+  </div>
+  </div>
+</header>
+
+  <!-- menu for sm -->
+  <div id="sm-menu" class="hidden lg:hidden">
+    <ul class="text-default-menu font-bold mt-[16px]">
+      <li class="mb-[16px]"><%= link_to 'ホーム', root_path %></li>
+      <li class="mb-[16px]"><%= link_to '活動・施策を知る', policies_path %></li>
+      <li class="mb-[16px]"><%= link_to '声を届ける', get_involved_path %></li>
+      <li class="base-blue"><%= link_to 'タイムライン', timelines_path %></li>
+    </ul>
+    <div class="mt-[40px] h-auto">
+    <div class="w-full">
+     <ul class="text-default-menu font-bold">
+       <li class="mb-[8px]">組織情報</li>
+       <li class="mb-[8px]">政策</li>
+       <li class="mb-[8px]">会議等</li>
+       <li class="mb-[8px]">法令</li>
+       <li class="mb-[8px]">採用</li>
+       <li class="mb-[8px]">資料</li>
+       <li class="mb-[8px]">申請・届出</li>
+       <li class="mb-[8px]">調達情報</li>
+       <li>お知らせ</li>
+     </ul>
+    </div>
+    <div class="mt-[40px]">
+      <h2 class="text-default-menu sub-heading mb-[16px]">注目のトピック</h2>
+      <ul class="text-default-menu font-bold">
+        <li class="mb-[16px]">新型コロナワクチン接種証明書アプリ</li>
+        <li>Visit Japan Webサービス</li>
+      </ul>
+    </div>
+    <div class="mt-[40px]">
+      <ul class="text-default-menu base-blue flex justify-start items-center gap-8">
+        <li><%= link_to 'サイトポリシー', '#', class: 'underline' %></li>
+        <li><%= link_to 'プライバシーポリシー', '#', class: 'underline' %></li>
+        <li><%= link_to 'ウェブアクセシビリティ', '#', class: 'underline' %></li>
+        <li>
+        <%= link_to 'コピーライトポリシー', '#', class: 'underline' %></li>
+        <li>
+        <%= link_to 'SNS', '#', class: 'underline' %>
+        </li>
+        <li>
+        <%= link_to 'ご意見・ご要望', '#', class: 'underline' %>
+        </li>
+        <li>
+        <%= link_to 'サイトマップ', '#', class: 'underline' %>
+        </li>
+      </ul>
+    </div>
+    <div class="mt-[40px]">
+      <ul class="text-default-menu base-blue">
+        <li><%= link_to 'Global Site', '#', class: 'underline' %></li>
+        <li><%= link_to 'プレスルーム', '#', class: 'underline' %></li>
+      </ul>
+    </div>
+    <div class="mt-[40px] h-auto">
+  <div class="mb-[40px]">
+    <h2 class="text-default-menu sub-heading mb-[8px]">デジタル庁へのアクセス</h2>
+    <address class="text-default-menu not-italic">〒102-0094　東京都千代田区紀尾井町1-3　東京ガーデンテラス紀尾井町 19階、20階</address>
+  </div>
+  <ul class="flex justify-start items-center gap-10">
+    <li><%= link_to image_tag('facebook.png'), '#' %></li>
+    <li><%= link_to image_tag('twitter.png'), '#' %></li>
+  </ul>
+  </div>
+  </div>
+  </div>
+
+ <!-- header -->
+ <header class="hidden lg:block">
+  <div class="w-full flex justify-start items-center py-[16px]">
+  <div class="w-1/6 shrink-0">
+    <%= link_to image_tag('digital.svg'), root_path, class: ' object-cover w-full h-auto' %>
+  </div>
+  </div>
+</header>
+
+  <div class="w-full flex justify-between items-start mt-[64px]">
+  <!-- main -->
+	<div class="w-full lg:w-3/4 h-auto">
+    <div class="w-full lg:w-4/5">
+        <% breadcrumb :timelines %>
+    <%= breadcrumbs separator: " &rsaquo; " %>
+
+      <h1 class="big-heading mt-[64px]">タイムライン</h1>
+      <div class="flex justify-center border rounded-lg mt-[40px]">
+        <div class="block p-6 bg-white w-full">
+          <h3 class="heading leading-tight mb-2">活動・施策を知る</h3>
+          <p class="text-default mb-4">
+            デジタル庁の政策や最近の取組をご紹介します。
+          </p>
+          <div class="relative">
+          <%= link_to policies_path do %>
+          <button type="button" class="w-full inline-block px-6 py-2.5 bg-[#0f41af] text-white text-left font-medium text-default-menu rounded shadow-md hover:shadow-lg">活動・施策を知る</button>
+          <span class="absolute top-[50%] translate-y-[-50%] right-[2%] heading text-white">&#062;</span>
+          <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center border rounded-lg mt-[40px]">
+        <div class="block p-6 bg-white w-full">
+          <h3 class="heading leading-tight mb-2">声を届ける</h3>
+          <p class="text-default mb-4">
+            デジタル社会のかたちやデジタル改革の進め方等について、幅広い国民の皆様からご意見やアイデアを募集しています。
+          </p>
+          <div class="relative">
+          <%= link_to get_involved_path do %>
+          <button type="button" class="w-full inline-block px-6 py-2.5 bg-[#0f41af] text-white text-left font-medium text-default-menu rounded shadow-md hover:shadow-lg">声を届ける</button>
+          <span class="absolute top-[50%] translate-y-[-50%] right-[2%] heading text-white">&#062;</span>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sidemenu -->
+	<div class="hidden lg:block w-1/4 h-auto">
+    <div class="w-full">
+     <ul class="text-default-menu font-bold">
+       <li class="mb-[8px]"><%= link_to '組織情報', '#' %></li>
+       <li class="mb-[8px]"><%= link_to '政策', '#' %></li>
+       <li class="mb-[8px]"><%= link_to '会議等', '#' %></li>
+       <li class="mb-[8px]"><%= link_to '法令', '#' %></li>
+       <li class="mb-[8px]"><%= link_to '採用', '#' %></li>
+       <li class="mb-[8px]"><%= link_to '資料', '#' %></li>
+       <li class="mb-[8px]"><%= link_to '申請・届出', '#' %></li>
+       <li class="mb-[8px]"><%= link_to '調達情報', '#' %></li>
+       <li class="mb-[8px]"><%= link_to 'お知らせ', '#' %></li>
+     </ul>
+    </div>
+    <div class="mt-[40px]">
+      <h2 class="text-default-menu sub-heading mb-[16px]">注目のトピック</h2>
+      <ul class="text-default-menu font-bold">
+        <li class="mb-[16px]"><%= link_to '新型コロナワクチン接種証明書アプリ', '#' %></li>
+        <li><%= link_to 'Visit Japan Webサービス', '#' %></li>
+      </ul>
+    </div>
+    <div class="mt-[40px]">
+      <ul class="text-default-menu py-[12px] base-blue">
+        <li><%= link_to 'サイトポリシー', '#', class: 'underline' %></li>
+        <li><%= link_to 'プライバシーポリシー', '#', class: 'underline' %></li>
+        <li><%= link_to 'ウェブアクセシビリティ', '#', class: 'underline' %></li>
+        <li>
+        <span class="mr-[16px]"><%= link_to 'コピーライトポリシー', '#', class: 'underline' %></span>
+        <span><%= link_to 'SNS', '#', class: 'underline' %></span>
+        </li>
+        <li>
+        <span class="mr-[16px]"><%= link_to 'ご意見・ご要望', '#', class: 'underline' %></span>
+        <span><%= link_to 'サイトマップ', '#', class: 'underline' %></span>
+        </li>
+      </ul>
+    </div>
+    <div class="mt-[40px]">
+      <ul class="text-default-menu py-[12px] base-blue">
+        <li><%= link_to 'Global Site', '#', class: 'underline' %></li>
+        <li><%= link_to 'プレスルーム', '#', class: 'underline' %></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="bg-[#EFEFEF]">
+  <div class="w-[90%] mx-auto">
+ <div class="lg:flex lg:flex-wrap lg:justify-between lg:items-start pt-[64px]">
+ <!-- left side -->
+	<div class="w-1/3 lg:w-1/4 h-auto">
+    <div id="header-inner" class="w-3/5">
+      <h1><%= link_to image_tag('digital.svg', class: 'object-cover w-full h-auto'), root_path %></h1>
+
+    <ul class="mt-[40px] lg:mt-[64px] text-default-menu font-bold">
+      <li class="mb-[16px]"><%= link_to 'ホーム', root_path %></li>
+      <li class="mb-[16px]"><%= link_to '活動・施策を知る', policies_path %></li>
+      <li class="mb-[16px]"><%= link_to '声を届ける', get_involved_path %></li>
+      <li class="base-blue"><%= link_to 'タイムライン', timelines_path %></li>
+    </ul>
+    </div>
+  </div>
+
+  <!-- center -->
+	<div class="mt-[40px] lg:mt-0 w-full lg:w-2/4 h-auto">
+    <div class="lg:w-4/5 lg:mx-auto">
+      <h2 class="text-default-menu sub-heading mb-[16px]">新しいトピック</h2>
+      <% @latest_topics.each do |topic| %>
+      <div class="flex justify-center border rounded-lg mb-[24px]">
+        <div class="block p-6 bg-[#FCFCFC] w-full">
+          <h3 class="heading leading-tight mb-[16px]"><%= topic.title %></h3>
+          <span class="sm-text sub-heading"><%= l topic.created_at %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- right side -->
+	<div class="mt-[48px] lg:mt-0 lg:w-1/4 h-auto pb-[64px] lg:pb-0">
+  <div class="mb-[40px]">
+    <h2 class="text-default-menu sub-heading mb-[16px]">デジタル庁へのアクセス</h2>
+    <address class="text-default-menu not-italic">〒102-0094　東京都千代田区紀尾井町1-3　東京ガーデンテラス紀尾井町 19階、20階</address>
+  </div>
+  <ul class="flex justify-start items-center gap-10">
+    <li><%= link_to image_tag('facebook.png'), '#' %></li>
+    <li><%= link_to image_tag('twitter.png'), '#' %></li>
+  </ul>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- back to top button -->
+<div id="back-button" class="fixed bottom-10 right-10 cursor-pointer">
+<div class="w-[56px] h-[56px] border border-[#0f41af] rounded-full relative">
+  <%= image_tag 'up-arrow.png', class: 'absolute top-[50%] left-0 right-0 mx-auto -translate-y-[50%]' %>
+</div>
+</div>
+</body>
+</html>

@@ -43,7 +43,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -70,3 +70,27 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# use tailwindcss
+gem 'cssbundling-rails'
+
+# use command 'bin/dev'
+gem 'foreman'
+
+# management user
+gem 'devise'
+
+# validation of image column
+gem 'activestorage-validator'
+
+# management screen
+gem 'activeadmin'
+
+# use jquery
+gem 'jquery-rails'
+
+# breadcrumbs
+gem 'gretel'
+
+# pagination
+gem 'kaminari'

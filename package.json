@@ -1,0 +1,10 @@
+{
+  "name": "app",
+  "private": "true",
+  "scripts": {
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.css -o ./app/assets/builds/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}
